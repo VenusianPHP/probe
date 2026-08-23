@@ -63,6 +63,7 @@ Composer package `venusian/probe` at **0.8.0** — a PsySH-based REPL exposed as
 | `src/ProbeCaster.php` | Presenter casters |
 | `src/ClassAliasAutoloader.php` | Short class aliases in session |
 | `config/probe.php` | Commands, alias lists, trust, pcntl |
+| `tests/` | Pest v4 specs ported from `laravel/tinker` |
 
 # Related
 

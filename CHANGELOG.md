@@ -37,6 +37,7 @@ Companion release aligned with `venusian/framework` / Voyager **0.8**. Successor
 
 ### Packaging
 
+- Pest v4 tests ported from `laravel/tinker` (`ClassAliasAutoloader`, `ProbeCaster`).
 - Ship package-root OKF knowledge bundle (`.okf/`), `AGENTS.md`, and this changelog as `export-ignore` in Composer dist via `.gitattributes`.
 
 ### Notes

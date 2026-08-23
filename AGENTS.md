@@ -23,3 +23,4 @@ Before changing probe code or advising on this package:
 - Casters: `Voyager\NutsAndBolts\{Collection,HtmlString}` and `Voyager\NutsAndBolts\DataObjects\Stringable`; `class_exists` for `Voyager\Process\ProcessResult` and `Voyager\System\Application`.
 - `probe.use_pcntl` defaults **false** (MPSSE/FTDI fork safety).
 - Deferred provider needs console kernel bootstrap `loadDeferredProviders()`.
+- Tests: Pest v4 (`vendor/bin/pest`), ported from `laravel/tinker`. Local Composer path-repo is sibling `../framework`.

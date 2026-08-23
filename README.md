@@ -1,6 +1,7 @@
 <h1 align="center">Venusian Probe</h1>
 
 <p align="center">
+<a href="https://github.com/VenusianPHP/probe/actions/workflows/tests.yml"><img src="https://github.com/VenusianPHP/probe/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
 <a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/dt/venusian/probe" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/v/venusian/probe" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/l/venusian/probe" alt="License"></a>
@@ -24,7 +25,7 @@ In order to ensure that the Venusian community is welcoming to all, please revie
 
 ## Security Vulnerabilities
 
-Please review [our security policy](https://github.com/Venusian/probe/security/policy) on how to report security vulnerabilities.
+Please review [our security policy](https://github.com/VenusianPHP/probe/security/policy) on how to report security vulnerabilities.
 
 ## License
 

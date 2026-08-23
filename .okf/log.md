@@ -2,6 +2,8 @@
 
 ## 2026-08-23
 
+* **Update**: GitHub Actions Pest workflow (PHP 8.4/8.5) plus Dependabot for Actions; README tests badge points at `VenusianPHP/probe`.
+* **Update**: Ported `laravel/tinker` tests to Pest v4 (`ClassAliasAutoloader`, `ProbeCaster`) with the tinker classmap fixtures.
 * **Update**: Retargeted the bundle from `scrapyard-io/wrench` **0.7** to `venusian/probe` **0.8** — Wrench→Probe, ScrapyardIO→Venusian, Fabricate→Voyager, Workshop→computer, `$this->container`→`$this->app`. Concepts set `status: draft` pending human verification. Historical 0.7 import-path trap marked `deprecated`.
 
 ## 2026-08-07
