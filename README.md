@@ -2,9 +2,9 @@
 
 <p align="center">
 <a href="https://github.com/VenusianPHP/probe/actions/workflows/tests.yml"><img src="https://github.com/VenusianPHP/probe/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
-<a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/dt/venusian/probe" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/v/venusian/probe" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/l/venusian/probe" alt="License"></a>
+<a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/v/venusian/probe.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/v/venusian/probe.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/venusian/probe"><img src="https://img.shields.io/packagist/l/venusian/probe.svg" alt="License"></a>
 </p>
 
 ## Introduction
