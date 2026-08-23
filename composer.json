@@ -3,7 +3,7 @@
     "description": "REPL for the Venusian PHP framework.",
     "keywords": ["probe", "repl", "psysh", "venusian"],
     "license": "MIT",
-    "version": "0.8.0",
+    "version": "0.8.1",
     "authors": [
         {
             "name": "Angel Gonzalez",
@@ -15,9 +15,9 @@
     ],
     "require": {
         "php": "^8.4|^8.5|^8.6",
-        "voyager/console": "^0.8.0",
-        "voyager/contracts": "^0.8.0",
-        "voyager/nuts-and-bolts": "^0.8.0",
+        "venusian-voyager/console": "^0.8.0",
+        "venusian-voyager/contracts": "^0.8.0",
+        "venusian-voyager/nuts-and-bolts": "^0.8.0",
         "psy/psysh": "^0.12.0",
         "symfony/var-dumper": "^5.4|^6.0|^7.0|^8.0"
     },
@@ -29,7 +29,7 @@
     },
     "suggest": {
         "venusian/framework": "Required host application framework (^0.8).",
-        "voyager/database": "Eloquent model casting when Database is restored (^0.8)."
+        "venusian-voyager/database": "Eloquent model casting when Database is restored (^0.8)."
     },
     "autoload": {
         "psr-4": {
