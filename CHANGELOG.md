@@ -2,6 +2,26 @@
 
 All notable changes to `venusian/probe` (successor of `scrapyard-io/wrench`) are documented in this file.
 
+## [0.10.0] — 2026-09-30
+
+Companion release aligned with `venusian/framework` **0.10**. No 0.9 release.
+
+### Compatibility
+
+- Require `venusian-voyager/console`, `venusian-voyager/contracts`, and `venusian-voyager/nuts-and-bolts` at `^0.10.0`; `symfony/var-dumper` `^8.0`.
+- `castApplication` takes `Voyager\Contracts\Core\FrameworkCore` and is registered on that interface unconditionally (`Voyager\System\Application` is gone).
+- Application caster reads `signalsAreCached` (was `eventsAreCached`).
+- `DataBindingException` replaces `BindingResolutionException`.
+- Drop the `AboutCommand` entry: 0.10 has no `about` command.
+
+### Added
+
+- `castModel` for `Voyager\Database\Instrument\Model`, registered when Database is installed: visible attributes, relations and appends as virtual properties, hidden attributes as protected.
+
+### CI
+
+- Resolve `venusian/framework` from the checked-out sibling via a path repository.
+
 ## [0.8.0] — 2026-08-23
 
 Companion release aligned with `venusian/framework` / Voyager **0.8**. Successor of `scrapyard-io/wrench` 0.7.

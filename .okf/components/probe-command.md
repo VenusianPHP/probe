@@ -4,7 +4,7 @@ title: ProbeCommand
 description: Computer console command probe — PsySH REPL with casters, aliases, and optional execute.
 resource: src/Console/ProbeCommand.php
 tags: [component, console, psysh, repl]
-generated: { by: agent:cursor-grok-4.6, at: "2026-08-23T04:10:00Z" }
+generated: { by: claude-opus-5-5, at: "2026-09-30T00:00:00Z" }
 status: draft
 sources:
   - id: command
@@ -14,8 +14,8 @@ sources:
     resource: config/probe.php
     title: probe config
   - id: binding
-    resource: venusian/framework src/Voyager/Contracts/Vessel/BindingResolutionException.php
-    title: BindingResolutionException (0.8)
+    resource: venusian/framework src/Voyager/Contracts/Vessel/DataBindingException.php
+    title: DataBindingException
 ---
 
 # Role
@@ -30,7 +30,7 @@ sources:
 | Description | Interact with your application |
 | Argument | `include` (array) — files to include before the shell |
 | Option | `--execute=` — run code non-interactively |
-| Exception import (0.8) | `Voyager\Contracts\Vessel\BindingResolutionException`[^binding] |
+| Container exception | `Voyager\Contracts\Vessel\DataBindingException`[^binding] |
 | App accessor | `getVenusian()` |
 
 # Behavior (high level)
@@ -52,4 +52,4 @@ sources:
 
 [^command]: ProbeCommand
 [^config]: probe config
-[^binding]: BindingResolutionException (0.8)
+[^binding]: DataBindingException

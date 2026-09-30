@@ -1,10 +1,10 @@
 ---
 type: Module
 title: ProbeCaster
-description: Symfony VarDumper casters for Application, Collection, Stringable, HtmlString, and optional ProcessResult.
+description: Symfony VarDumper casters for FrameworkCore, Collection, Stringable, HtmlString, and optional Instrument Model and ProcessResult.
 resource: src/ProbeCaster.php
 tags: [component, caster, var-dumper]
-generated: { by: agent:cursor-grok-4.6, at: "2026-08-23T04:10:00Z" }
+generated: { by: claude-opus-5-5, at: "2026-09-30T00:00:00Z" }
 status: draft
 sources:
   - id: caster
@@ -19,18 +19,20 @@ sources:
 
 `Venusian\Probe\ProbeCaster` supplies presenter casters so PsySH dumps of Voyager types show useful virtual properties.[^caster]
 
-# Casters (0.8)
+# Casters (0.10)
 
-| Target | Method | 0.8 note |
-|--------|--------|----------|
-| `Voyager\System\Application` | `castApplication` | Register when `class_exists(Application)` — host framework[^command] |
-| `Voyager\NutsAndBolts\Collection` | `castCollection` | Collections package, namespaced as NutsAndBolts |
-| `Voyager\NutsAndBolts\DataObjects\Stringable` | `castStringable` | Nab DataObjects |
-| `Voyager\NutsAndBolts\HtmlString` | `castHtmlString` | Present in 0.8 (absent in 0.7 wrench) |
-| `Voyager\Process\ProcessResult` | `castProcessResult` | **Guard** with `class_exists` — Process may be absent[^command] |
-| Eloquent Model | `castModel` | Commented / deferred until database is a probe concern |
+| Target | Method | Registration |
+|--------|--------|--------------|
+| `Voyager\Contracts\Core\FrameworkCore` | `castApplication` | Always. Interface key → VarDumper matches `RenderedInstance` and any other core[^command] |
+| `Voyager\NutsAndBolts\Collection` | `castCollection` | Always |
+| `Voyager\NutsAndBolts\DataObjects\Stringable` | `castStringable` | Always |
+| `Voyager\NutsAndBolts\HtmlString` | `castHtmlString` | Always |
+| `Voyager\Database\Instrument\Model` | `castModel` | When `class_exists` — Database not required[^command] |
+| `Voyager\Process\ProcessResult` | `castProcessResult` | When `class_exists` — Process not required[^command] |
 
-Hard `use Voyager\Process\ProcessResult` at file top will fatally fail if Process is missing — prefer guarded registration from `ProbeCommand::getCasters()`.
+`castApplication` calls each of `configurationIsCached`, `environment`, `environmentFile`, `signalsAreCached`, `runningUnitTests`, `version`, `path`, `basePath`, `configPath`, `databasePath`, `storagePath`, `bootstrapPath`; skips nulls and throwers.[^caster]
+
+`castModel`: attributes + relations + evaluated `$appends`. Hidden keys → protected prefix; visible (or everything not hidden when `$visible` empty) → virtual prefix. Hidden wins.[^caster]
 
 # Related
 

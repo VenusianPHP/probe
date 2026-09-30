@@ -5,7 +5,8 @@ namespace Venusian\Probe;
 use Voyager\NutsAndBolts\Collection;
 use Voyager\NutsAndBolts\HtmlString;
 use Voyager\NutsAndBolts\DataObjects\Stringable;
-use Voyager\System\Application;
+use Voyager\Contracts\Core\FrameworkCore;
+use Voyager\Database\Instrument\Model;
 use Symfony\Component\VarDumper\Caster\Caster;
 
 class ProbeCaster
@@ -19,7 +20,7 @@ class ProbeCaster
         'configurationIsCached',
         'environment',
         'environmentFile',
-        'eventsAreCached',
+        'signalsAreCached',
         'runningUnitTests',
         'version',
         'path',
@@ -33,10 +34,10 @@ class ProbeCaster
     /**
      * Get an array representing the properties of an application.
      *
-     * @param  Application  $app
+     * @param  FrameworkCore  $app
      * @return array<string, mixed>
      */
-    public static function castApplication(Application $app): array
+    public static function castApplication(FrameworkCore $app): array
     {
         $results = [];
 
@@ -92,6 +93,42 @@ class ProbeCaster
         return [
             Caster::PREFIX_VIRTUAL.'html' => $htmlString->toHtml(),
         ];
+    }
+
+    /**
+     * Get an array representing the properties of an Instrument model: visible attributes
+     * and relations as virtual properties, hidden ones as protected, appends evaluated.
+     *
+     * Registered only when Voyager\Database\Instrument\Model exists.
+     *
+     * @param  Model  $model
+     * @return array<string, mixed>
+     */
+    public static function castModel(Model $model): array
+    {
+        $attributes = array_merge($model->getAttributes(), $model->getRelations());
+
+        foreach ($model->getAppends() as $appended) {
+            $attributes[$appended] = $model->{$appended};
+        }
+
+        $hidden = array_flip($model->getHidden());
+
+        $visible = array_flip($model->getVisible() ?: array_diff(array_keys($attributes), $model->getHidden()));
+
+        $results = [];
+
+        foreach ($attributes as $key => $value) {
+            $prefix = match (true) {
+                isset($hidden[$key]) => Caster::PREFIX_PROTECTED,
+                isset($visible[$key]) => Caster::PREFIX_VIRTUAL,
+                default => '',
+            };
+
+            $results[$prefix.$key] = $value;
+        }
+
+        return $results;
     }
 
     /**

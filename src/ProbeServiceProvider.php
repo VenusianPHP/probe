@@ -2,10 +2,9 @@
 
 namespace Venusian\Probe;
 
-use Voyager\Contracts\Vessel\BindingResolutionException;
+use Voyager\Contracts\Vessel\DataBindingException;
 use Voyager\Contracts\NutsAndBolts\DeferrableProvider;
 use Voyager\NutsAndBolts\ServiceProvider;
-use Voyager\System\Console\AboutCommand;
 use Venusian\Probe\Console\ProbeCommand;
 
 class ProbeServiceProvider extends ServiceProvider implements DeferrableProvider
@@ -17,7 +16,7 @@ class ProbeServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function register(): void
     {
-        $this->app->singleton('command.probe', function () {
+        $this->app->registerSingleton('command.probe', function () {
             return new ProbeCommand;
         });
 
@@ -29,26 +28,15 @@ class ProbeServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return void
      *
-     * @throws BindingResolutionException
+     * @throws DataBindingException
      */
     public function boot(): void
     {
         $source = realpath($raw = __DIR__.'/../config/probe.php') ?: $raw;
 
-        if ($this->app->runningInConsole()) {
-            $this->publishes([$source => $this->app->configPath('probe.php')]);
-        }
+        $this->publishes([$source => $this->app->configPath('probe.php')]);
 
         $this->mergeConfigFrom($source, 'probe');
-
-        AboutCommand::add('Environment', [
-            'Probe Installed' => AboutCommand::format(
-                true,
-                console: fn ($value) => $value
-                    ? '<fg=green;options=bold>YES</>'
-                    : '<fg=yellow;options=bold>NO</>',
-            ),
-        ]);
     }
 
     /**

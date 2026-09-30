@@ -1,10 +1,10 @@
 ---
 type: Trap
 title: 0.8 import paths
-description: Probe 0.8 must use $this->app, Voyager contracts (DeferrableProvider, Vessel BindingResolutionException), System Application, and Computer — not Fabricate/Wrench 0.7 paths or $this->container.
-tags: [trap, 0.8, imports, container, casters, voyager]
+description: Historical 0.7 → 0.8 import map. Superseded by 0.10 paths.
+tags: [trap, 0.8, imports, container, casters, historical]
 generated: { by: agent:cursor-grok-4.6, at: "2026-08-23T04:10:00Z" }
-status: draft
+status: deprecated
 sources:
   - id: nab-sp
     resource: venusian/framework src/Voyager/NutsAndBolts/ServiceProvider.php
@@ -53,6 +53,7 @@ Console kernel bootstrap must call `loadDeferredProviders()` so the deferred pro
 - [ProbeCaster](../components/probe-caster.md)
 - Package [CHANGELOG.md](../../CHANGELOG.md)
 - Historical [0.7 import paths](07-import-paths.md)
+- Current [0.10 import paths](010-import-paths.md)
 
 [^nab-sp]: ServiceProvider::$app
 [^deferrable]: DeferrableProvider

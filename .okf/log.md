@@ -1,5 +1,11 @@
 # Directory Update Log
 
+## 2026-09-30
+
+* **Update**: Bundle retargeted to **0.10.0** — [Package](orientation/package.md) requires `venusian-voyager/*` `^0.10.0`; [ProbeServiceProvider](components/service-provider.md) without About, `registerSingleton`, ungated publish; [ProbeCommand](components/probe-command.md) `DataBindingException`; [Companion provider](conventions/companion-provider.md), [Require probe](playbooks/require-probe.md).
+* **Update**: [ProbeCaster](components/probe-caster.md) — `castApplication` keyed on `FrameworkCore`, `signalsAreCached`; `castModel` for `Voyager\Database\Instrument\Model`.
+* **Addition**: [0.10 import paths](traps/010-import-paths.md). [0.8 import paths](traps/08-import-paths.md) → `deprecated`.
+
 ## 2026-08-23
 
 * **Update**: GitHub Actions Pest workflow (PHP 8.4/8.5) plus Dependabot for Actions; README tests badge points at `VenusianPHP/probe`.

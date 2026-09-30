@@ -11,7 +11,7 @@ use Psy\VersionUpdater\Checker;
 use Venusian\Probe\ClassAliasAutoloader;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Voyager\Contracts\Vessel\BindingResolutionException;
+use Voyager\Contracts\Vessel\DataBindingException;
 
 class ProbeCommand extends Command
 {
@@ -42,7 +42,7 @@ class ProbeCommand extends Command
      * Execute the console command.
      *
      * @return int
-     * @throws BindingResolutionException
+     * @throws DataBindingException
      */
     public function handle(): int
     {
@@ -104,7 +104,7 @@ class ProbeCommand extends Command
      * Get Computer commands to pass through to PsySH.
      *
      * @return array
-     * @throws BindingResolutionException
+     * @throws DataBindingException
      */
     protected function getCommands(): array
     {
@@ -131,7 +131,7 @@ class ProbeCommand extends Command
      * Get an array of Venusian tailored casters.
      *
      * @return array
-     * @throws BindingResolutionException
+     * @throws DataBindingException
      */
     protected function getCasters(): array
     {
@@ -139,14 +139,15 @@ class ProbeCommand extends Command
             'Voyager\NutsAndBolts\Collection' => 'Venusian\Probe\ProbeCaster::castCollection',
             'Voyager\NutsAndBolts\DataObjects\Stringable' => 'Venusian\Probe\ProbeCaster::castStringable',
             'Voyager\NutsAndBolts\HtmlString' => 'Venusian\Probe\ProbeCaster::castHtmlString',
+            'Voyager\Contracts\Core\FrameworkCore' => 'Venusian\Probe\ProbeCaster::castApplication',
         ];
+
+        if (class_exists('Voyager\Database\Instrument\Model')) {
+            $casters['Voyager\Database\Instrument\Model'] = 'Venusian\Probe\ProbeCaster::castModel';
+        }
 
         if (class_exists('Voyager\Process\ProcessResult')) {
             $casters['Voyager\Process\ProcessResult'] = 'Venusian\Probe\ProbeCaster::castProcessResult';
-        }
-
-        if (class_exists('Voyager\System\Application')) {
-            $casters['Voyager\System\Application'] = 'Venusian\Probe\ProbeCaster::castApplication';
         }
 
         $config = $this->getVenusian()->make('config');

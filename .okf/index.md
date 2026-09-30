@@ -4,24 +4,24 @@ okf_version: "0.2"
 
 # venusian/probe Knowledge Bundle
 
-Package knowledge for `venusian/probe` (PsySH REPL for Venusian apps, v0.8.0). Successor of `scrapyard-io/wrench`.
+Package knowledge for `venusian/probe` (PsySH REPL for Venusian apps, v0.10.0). Successor of `scrapyard-io/wrench`.
 Read this index first; open only the concepts needed for the task.
 
-**Trust rule:** Prefer `status: stable`. Treat `deprecated` as historical only. Concepts below are `draft` until a human verifies the 0.8 rename.
+**Trust rule:** Prefer `status: stable`. Treat `deprecated` as historical only. Concepts below are `draft` until a human verifies the 0.10 port.
 **Placement:** Package-root `.okf/` only — not under `src/`.
 **Scope:** This companion package only. Voyager domain rules live in `venusian/framework` OKF.
-**Version note:** Claims track **0.8.0** (Voyager types, `$this->app`, Computer binary `probe`, casters, pcntl default).
+**Version note:** Claims track **0.10.0** (`venusian-voyager/*` splits, `FrameworkCore`, `$this->app`, Computer binary `probe`, casters, pcntl default).
 
 # Orientation
 
-* [Package (0.8)](orientation/package.md) - Composer identity, namespace, role vs framework.
+* [Package](orientation/package.md) - Composer identity, namespace, role vs framework.
 
 # Components
 
 * [Components](components/) - Provider, Computer command, casters, alias autoloader, config.
 * [ProbeServiceProvider](components/service-provider.md) - Deferred provider; binds `command.probe`. (`draft`)
 * [ProbeCommand](components/probe-command.md) - Computer `probe` PsySH REPL. (`draft`)
-* [ProbeCaster](components/probe-caster.md) - VarDumper casters for Voyager types. (`draft`)
+* [ProbeCaster](components/probe-caster.md) - VarDumper casters for Voyager types, Instrument models included. (`draft`)
 * [ClassAliasAutoloader](components/class-alias-autoloader.md) - Short-name class aliases in the shell. (`draft`)
 * [config/probe.php](components/config.md) - Publishable probe config keys. (`draft`)
 
@@ -32,7 +32,8 @@ Read this index first; open only the concepts needed for the task.
 # Traps
 
 * [pcntl + MPSSE/FTDI](traps/pcntl-hardware-fork.md) - `probe.use_pcntl` defaults false; forks break macOS hardware IO. (`draft`)
-* [0.8 import paths](traps/08-import-paths.md) - `$this->app`, Voyager contracts, System Application, guarded casters. (`draft`)
+* [0.10 import paths](traps/010-import-paths.md) - No `Voyager\System`; `FrameworkCore`, `DataBindingException`, `signalsAreCached`, no `about`. (`draft`)
+* [0.8 import paths](traps/08-import-paths.md) - Historical 0.7 → 0.8 map. (`deprecated`)
 * [0.7 import paths](traps/07-import-paths.md) - Historical Fabricate/Wrench paths. (`deprecated`)
 
 # Playbooks

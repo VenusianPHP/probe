@@ -4,7 +4,7 @@ title: ProbeServiceProvider
 description: Deferred Venusian provider that registers command.probe and merges/publishes probe config.
 resource: src/ProbeServiceProvider.php
 tags: [component, provider, deferred, computer]
-generated: { by: agent:cursor-grok-4.6, at: "2026-08-23T04:10:00Z" }
+generated: { by: claude-opus-5-5, at: "2026-09-30T00:00:00Z" }
 status: draft
 sources:
   - id: provider
@@ -18,7 +18,7 @@ sources:
     title: Voyager ServiceProvider ($app)
   - id: deferrable
     resource: venusian/framework src/Voyager/Contracts/NutsAndBolts/DeferrableProvider.php
-    title: DeferrableProvider contract (0.8)
+    title: DeferrableProvider contract
 ---
 
 # Role
@@ -27,23 +27,23 @@ sources:
 
 It implements `DeferrableProvider` and `provides()` → `['command.probe']`, so it loads when that binding (or command list path) needs it. Console bootstrap must call `loadDeferredProviders()` so deferred probe is available for `computer probe` / help listing.[^provider]
 
-# 0.8 API expectations
+# 0.10 API
 
-| Concern | 0.8 target |
-|---------|------------|
+| Concern | Target |
+|---------|--------|
 | Base | `Voyager\NutsAndBolts\ServiceProvider` |
 | Deferrable | `Voyager\Contracts\NutsAndBolts\DeferrableProvider`[^deferrable] |
 | App handle | `$this->app` (not `$this->container` / `$this->program`)[^nab-sp] |
-| Publish gate | `$this->app->runningInConsole()` |
-| Singleton | `$this->app->singleton('command.probe', …)` |
+| Singleton | `$this->app->registerSingleton('command.probe', …)` |
+| Container exception | `Voyager\Contracts\Vessel\DataBindingException` |
 
-See [0.8 import paths](../traps/08-import-paths.md).
+See [0.10 import paths](../traps/010-import-paths.md).
 
 # Lifecycle
 
 1. **register** — singleton `command.probe` → `ProbeCommand`; `$this->commands(['command.probe'])`.
-2. **boot** — `mergeConfigFrom` probe config; `publishes` to app `configPath('probe.php')` when running in console; `AboutCommand::add('Environment', …)` reports **Probe Installed = YES**.
-3. **provides** — `command.probe` for deferred loading (console kernel `loadDeferredProviders()` loads this before Computer commands, so `about` sees the override).
+2. **boot** — `mergeConfigFrom` probe config; `publishes` to app `configPath('probe.php')`, ungated. No `about` command in 0.10 → no About entry.
+3. **provides** — `command.probe` for deferred loading (console kernel `loadDeferredProviders()` loads this before Computer commands, so `computer probe` resolves).
 
 # Related
 
@@ -54,4 +54,4 @@ See [0.8 import paths](../traps/08-import-paths.md).
 [^provider]: ProbeServiceProvider
 [^composer]: venusian.providers discovery
 [^nab-sp]: Voyager ServiceProvider ($app)
-[^deferrable]: DeferrableProvider contract (0.8)
+[^deferrable]: DeferrableProvider contract
