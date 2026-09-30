@@ -31,7 +31,8 @@ jobs:
           coverage: none
 
       - name: Resolve venusian/framework from the checkout
-        run: composer config repositories.framework '{"type": "path", "url": "../framework", "options": {"symlink": false}}'
+        run: |
+          composer config repositories.framework '{"type": "path", "url": "../framework", "options": {"symlink": false}}'
 
       - name: Install Composer dependencies
         run: composer update --prefer-stable --no-interaction --no-progress
