@@ -19,7 +19,7 @@ jobs:
     name: PHP ${{ matrix.php }}
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Checkout venusian/framework
         run: git clone --depth 1 https://github.com/VenusianPHP/framework.git ../framework
