@@ -19,7 +19,7 @@ Before changing probe code or advising on this package:
 - Namespace: `Venusian\Probe\` → `src/`.
 - Role: PsySH REPL as Computer command `probe` for Venusian applications.
 - Companion to `venusian/framework` 0.10 — **not** a Voyager domain; owns `ProbeServiceProvider` and discovers via `extra.venusian.providers`.
-- Provider: `$this->app`; `Voyager\Contracts\NutsAndBolts\DeferrableProvider`; `Voyager\Contracts\Vessel\DataBindingException`. 0.10 has no `Voyager\System` and no `about`.
+- Provider: `$this->app`; `Voyager\Contracts\NutsAndBolts\DeferrableProvider`; `Voyager\Contracts\Vessel\DataBindingException`. 0.10 has no `Voyager\System`.
 - Casters: `Voyager\Contracts\Core\FrameworkCore`, `Voyager\NutsAndBolts\{Collection,HtmlString}`, `Voyager\NutsAndBolts\DataObjects\Stringable`; `class_exists` for `Voyager\Database\Instrument\Model` and `Voyager\Process\ProcessResult`.
 - `probe.use_pcntl` defaults **false** (MPSSE/FTDI fork safety).
 - Deferred provider needs console kernel bootstrap `loadDeferredProviders()`.

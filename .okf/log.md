@@ -1,5 +1,9 @@
 # Directory Update Log
 
+## 2026-10-07
+
+* **Update**: [ProbeServiceProvider](components/service-provider.md) — registers nothing when `isRocketRunning()`; About wording no longer claims 0.10 lacks `about`.
+
 ## 2026-09-30
 
 * **Update**: Bundle retargeted to **0.10.0** — [Package](orientation/package.md) requires `venusian-voyager/*` `^0.10.0`; [ProbeServiceProvider](components/service-provider.md) without About, `registerSingleton`, ungated publish; [ProbeCommand](components/probe-command.md) `DataBindingException`; [Companion provider](conventions/companion-provider.md), [Require probe](playbooks/require-probe.md).

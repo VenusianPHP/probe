@@ -2,6 +2,12 @@
 
 All notable changes to `venusian/probe` (successor of `scrapyard-io/wrench`) are documented in this file.
 
+## [Unreleased]
+
+### Fixed
+
+- Probe no longer registers on rocket runs (`FrameworkCore::isRocketRunning()`). Rocket picked it up as a command, and under rocket the loop holds mail for a sketch, so a probe shell there never saw loop mail.
+
 ## [0.10.0] — 2026-09-30
 
 Companion release aligned with `venusian/framework` **0.10**. No 0.9 release.

@@ -3,14 +3,11 @@
     "description": "REPL for the Venusian PHP framework.",
     "keywords": ["probe", "repl", "psysh", "venusian"],
     "license": "MIT",
-    "version": "0.10.0",
+    "version": "0.10.1",
     "authors": [
         {
             "name": "Angel Gonzalez",
             "email": "angel@projectsaturnstudios.com"
-        },
-        {
-            "name": "Taylor Otwell"
         }
     ],
     "require": {

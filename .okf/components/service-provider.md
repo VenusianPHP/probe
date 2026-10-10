@@ -41,8 +41,8 @@ See [0.10 import paths](../traps/010-import-paths.md).
 
 # Lifecycle
 
-1. **register** — singleton `command.probe` → `ProbeCommand`; `$this->commands(['command.probe'])`.
-2. **boot** — `mergeConfigFrom` probe config; `publishes` to app `configPath('probe.php')`, ungated. No `about` command in 0.10 → no About entry.
+1. **register** — under rocket (`$this->app->isRocketRunning()`), nothing: probe stays off `rocket list`, and rocket's loop holds mail for a sketch, so a shell there would never see loop mail. Otherwise singleton `command.probe` → `ProbeCommand`; `$this->commands(['command.probe'])`.
+2. **boot** — `mergeConfigFrom` probe config; `publishes` to app `configPath('probe.php')`, ungated. No About entry.
 3. **provides** — `command.probe` for deferred loading (console kernel `loadDeferredProviders()` loads this before Computer commands, so `computer probe` resolves).
 
 # Related

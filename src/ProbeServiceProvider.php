@@ -16,6 +16,11 @@ class ProbeServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function register(): void
     {
+        // Probe is a computer command. Rocket runs sketches, and its loop holds mail for one.
+        if ($this->app->isRocketRunning()) {
+            return;
+        }
+
         $this->app->registerSingleton('command.probe', function () {
             return new ProbeCommand;
         });
