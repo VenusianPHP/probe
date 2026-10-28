@@ -16,7 +16,7 @@ sources:
 
 # Rule
 
-`venusian/probe` is a **companion** to `venusian/framework` 0.10, not a Voyager component under `Voyager\*`.[^composer]
+`venusian/probe` is a **companion** to `venusian/framework` 0.11, not a Voyager component under `Voyager\*`.[^composer]
 
 Therefore:
 

@@ -1,5 +1,9 @@
 # Directory Update Log
 
+## 2026-10-28
+
+* **Update**: Bundle retargeted to **0.11.0** — [Package](orientation/package.md) requires `venusian-voyager/*` `^0.11.0`, PHP `~8.4.27||^8.5.12`; [Require probe](playbooks/require-probe.md), [ProbeServiceProvider](components/service-provider.md), [ProbeCaster](components/probe-caster.md), [Companion provider](conventions/companion-provider.md) headings and versions; [0.10 import paths](traps/010-import-paths.md) — 0.11's `about` lives in the full framework, so probe adds no row.
+
 ## 2026-10-07
 
 * **Update**: [ProbeServiceProvider](components/service-provider.md) — registers nothing when `isRocketRunning()`; About wording no longer claims 0.10 lacks `about`.

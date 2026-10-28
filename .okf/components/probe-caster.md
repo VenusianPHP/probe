@@ -19,7 +19,7 @@ sources:
 
 `Venusian\Probe\ProbeCaster` supplies presenter casters so PsySH dumps of Voyager types show useful virtual properties.[^caster]
 
-# Casters (0.10)
+# Casters (0.11)
 
 | Target | Method | Registration |
 |--------|--------|--------------|

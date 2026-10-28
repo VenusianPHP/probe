@@ -2,7 +2,14 @@
 
 All notable changes to `venusian/probe` (successor of `scrapyard-io/wrench`) are documented in this file.
 
-## [Unreleased]
+## [0.11.0] — 2026-10-28
+
+Companion release aligned with `venusian/framework` **0.11**.
+
+### Compatibility
+
+- Require `venusian-voyager/console`, `venusian-voyager/contracts`, and `venusian-voyager/nuts-and-bolts` at `^0.11.0`.
+- Target PHP `~8.4.27||^8.5.12`, the framework's patched floor.
 
 ### Fixed
 

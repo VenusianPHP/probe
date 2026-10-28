@@ -1,9 +1,9 @@
 ---
 type: Orientation
 title: Package
-description: venusian/probe 0.10.0 — PsySH REPL (Computer command probe) for Venusian applications.
+description: venusian/probe 0.11.0 — PsySH REPL (Computer command probe) for Venusian applications.
 resource: .
-tags: [orientation, probe, venusian, 0.10]
+tags: [orientation, probe, venusian, 0.11]
 generated: { by: claude-opus-5-5, at: "2026-09-30T00:00:00Z" }
 status: draft
 sources:
@@ -26,15 +26,15 @@ sources:
 
 # What it is
 
-Composer package `venusian/probe` at **0.10.0** — a PsySH-based REPL exposed as the Computer console command `probe` for Venusian applications. Successor of `scrapyard-io/wrench`.[^composer][^command]
+Composer package `venusian/probe` at **0.11.0** — a PsySH-based REPL exposed as the Computer console command `probe` for Venusian applications. Successor of `scrapyard-io/wrench`.[^composer][^command]
 
 | Field | Value |
 |-------|-------|
 | Name | `venusian/probe` |
-| Version | `0.10.0` |
-| PHP | `^8.4\|^8.5\|^8.6`[^composer] |
+| Version | `0.11.0` |
+| PHP | `~8.4.27\|\|^8.5.12`[^composer] |
 | Namespace | `Venusian\Probe\` → `src/` |
-| Role | REPL companion to `venusian/framework` 0.10 |
+| Role | REPL companion to `venusian/framework` 0.11 |
 | Discovery | `extra.venusian.providers` → `Venusian\Probe\ProbeServiceProvider`[^composer] |
 
 `.okf/`, `AGENTS.md`, and `CHANGELOG.md` are `export-ignore` from Composer dist.[^gitattributes]
@@ -43,9 +43,9 @@ Composer package `venusian/probe` at **0.10.0** — a PsySH-based REPL exposed a
 
 | Package | Constraint |
 |---------|------------|
-| `venusian-voyager/console` | `^0.10.0` |
-| `venusian-voyager/contracts` | `^0.10.0` |
-| `venusian-voyager/nuts-and-bolts` | `^0.10.0` |
+| `venusian-voyager/console` | `^0.11.0` |
+| `venusian-voyager/contracts` | `^0.11.0` |
+| `venusian-voyager/nuts-and-bolts` | `^0.11.0` |
 | `psy/psysh` | `^0.12.0` |
 | `symfony/var-dumper` | `^8.0` |
 

@@ -32,7 +32,7 @@ sources:
 | `voyager/*` / `venusian-voyager/*` `^0.8` | `venusian-voyager/*` `^0.10.0` |
 | `Voyager\System\Application` | `Voyager\Contracts\Core\FrameworkCore` (concrete `Voyager\Core\RenderedInstance`)[^core] |
 | `class_exists('Voyager\System\Application')` caster guard | Unguarded `FrameworkCore` key — contracts is required[^command] |
-| `Voyager\System\Console\AboutCommand` | None — 0.10 ships no `about` |
+| `Voyager\System\Console\AboutCommand` | None in 0.10. 0.11 ships `Voyager\Core\Console\AboutCommand` in the full framework, which probe does not require, so probe adds no row |
 | `Voyager\Contracts\Vessel\BindingResolutionException` | `Voyager\Contracts\Vessel\DataBindingException`[^binding] |
 | `eventsAreCached()` | `signalsAreCached()`[^caster] |
 | `Voyager\System\Console\Kernel` | `Voyager\Core\Console\Kernel`[^console-kernel] |

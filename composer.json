@@ -3,7 +3,7 @@
     "description": "REPL for the Venusian PHP framework.",
     "keywords": ["probe", "repl", "psysh", "venusian"],
     "license": "MIT",
-    "version": "0.10.1",
+    "version": "0.11.0",
     "authors": [
         {
             "name": "Angel Gonzalez",
@@ -11,22 +11,22 @@
         }
     ],
     "require": {
-        "php": "^8.4|^8.5|^8.6",
+        "php": "~8.4.27||^8.5.12",
         "psy/psysh": "^0.12.0",
-        "venusian-voyager/console": "^0.10.0",
-        "venusian-voyager/contracts": "^0.10.0",
-        "venusian-voyager/nuts-and-bolts": "^0.10.0",
+        "venusian-voyager/console": "^0.11.0",
+        "venusian-voyager/contracts": "^0.11.0",
+        "venusian-voyager/nuts-and-bolts": "^0.11.0",
         "symfony/var-dumper": "^8.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.6",
         "pestphp/pest": "^4",
         "phpstan/phpstan": "^1.10",
-        "venusian/framework": "^0.10.0"
+        "venusian/framework": "^0.11.0"
     },
     "suggest": {
-        "venusian/framework": "Required host application framework (^0.10).",
-        "venusian-voyager/database": "Instrument model casting when Database is restored (^0.10)."
+        "venusian/framework": "Required host application framework (^0.11).",
+        "venusian-voyager/database": "Instrument model casting when Database is restored (^0.11)."
     },
     "autoload": {
         "psr-4": {
@@ -42,7 +42,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "0.10.x-dev"
+            "dev-main": "0.11.x-dev"
         },
         "venusian": {
             "providers": [
